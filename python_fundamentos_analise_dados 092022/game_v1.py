@@ -1,37 +1,57 @@
 # Game Ping-Pong
 
+#Meu trabalho aqui é apenas comentar o código e identificar o que sei
+
+
+
 from tkinter import *
 import random
 import time
 
+""""
+importando bibliotecas:
+tkinter para construir a interface
+random para solecionar números aleatoriamente
+time para fazer o código 'esperar' e/ou utilizar temporizador
+"""
+
 level = int(input("Qual nível você gostaria de jogar? 1/2/3/4/5 \n"))
 length = 500/level
 
+#Aqui uma variável vai recceber um número, que será o denominador de um cálculo para definição da variável length
 
 root = Tk()
 root.title("Ping Pong")
 root.resizable(0,0)
 root.wm_attributes("-topmost", -1)
 
+#aqui, uma variável root está recebendo alguns parâmetros da biblioteca tkinter, o que certamente está reacionado a interface do jogo
+
 canvas = Canvas(root, width=800, height=600, bd=0,highlightthickness=0)
 canvas.pack()
 
+#Aqui é definido o tamano e cores da tela, com o método .pack(), que também é da biblioteca tkinter e serve para widgets
+
 root.update()
 
-# Variável
+# definição de Variável count como zero e lost como false
 count = 0
 lost = False
 
 class Bola:
+#Definida a classe Bola para colcoar as configurações referentes a bolinha do jogo
+
     def __init__(self, canvas, Barra, color):
         self.canvas = canvas
         self.Barra = Barra
         self.id = canvas.create_oval(0, 0, 15, 15, fill=color)
         self.canvas.move(self.id, 245, 200)
 
+#dentro da função init são definidos os parâmetros, o tamanho da bolinha e movimento.
+
         starts_x = [-3, -2, -1, 1, 2, 3]
         random.shuffle(starts_x)
-
+#marou a posição nicial da bolinha e o random para alternar a posição
         self.x = starts_x[0]
         self.y = -3
 

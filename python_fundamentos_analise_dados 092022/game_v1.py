@@ -78,6 +78,7 @@ class Bola:
 
         self.Barra_pos = self.canvas.coords(self.Barra.id)
 
+#Acima, imagino que seja a veriicação do final do jogo, caso esteja acima/abaixo de 3 ...
 
         if pos[2] >= self.Barra_pos[0] and pos[0] <= self.Barra_pos[2]:
             if pos[3] >= self.Barra_pos[1] and pos[3] <= self.Barra_pos[3]:
@@ -94,6 +95,7 @@ class Bola:
             global lost
             lost = True
 
+#Saiu das condições de ifs, GmeOver!
 
 class Barra:
     def __init__(self, canvas, color):

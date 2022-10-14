@@ -71,11 +71,12 @@ class Hangman:
 
 	# Método Construtor
 	def __init__(self, word):
-		
+		self.word = word		
 		
 	# Método para adivinhar a letra
 	def guess(self, letter):
-		
+		for i in self.word:
+			pass
 		
 	# Método para verificar se o jogo terminou
 	def hangman_over(self):

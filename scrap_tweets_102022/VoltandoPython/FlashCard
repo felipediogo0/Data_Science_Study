@@ -1,0 +1,27 @@
+import random
+
+flashcards = {
+    "hello": "olá",
+    "goodbye": "adeus",
+    "thank you": "obrigado",
+    "yes": "sim",
+    "no": "não"
+}
+
+def run_flashcards():
+    keys = list(flashcards.keys())
+    random.shuffle(keys)
+
+    for key in keys:
+        print("Word:", key)
+        answer = input("Translation: ")
+
+        if answer.lower() == flashcards[key].lower():
+            print("Correct!")
+        else:
+            print("Incorrect. The correct translation is:", flashcards[key])
+
+        print()
+
+run_flashcards()
+
